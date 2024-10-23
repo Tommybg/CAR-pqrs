@@ -238,15 +238,23 @@ def main():
         st.session_state.messages = []
 
     # Add a button to clear chat history
+    # Add a button to clear chat history
     with st.sidebar:  
-        model_choice = st.selectbox("Selecciona el modelo deseado:", ["OpenAI", "Groq API", "Claude"])
+        st.markdown("""
+**Bienvenido al Sistema de Gestión de PQRS**      
+Esta herramienta está diseñada para ayudarte a clasificar y gestionar eficientemente las PQRS recibidas, puedes:    
+                                   
+- Descargar el desglose de la PQRS: Obtén un informe detallado de tus solicitudes.
+- Haz clic en la casilla para ver más texto: Accede a información adicional sobre tu consulta.
+
+**Para comenzar ingrea tu PQRS.**  
+                """)
+        
+        model_choice = st.selectbox("Selecciona el modelo de IA deseado:", ["OpenAI", "Groq API", "Claude"])
 
         if st.button("Borra Historial del Chat"):
             st.session_state.messages = []
-            st.experimental_rerun()
-
-            
-            
+            st.experimental_rerun()            
 
     # Display chat history
     for message in st.session_state.messages:
