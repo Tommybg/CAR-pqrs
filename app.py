@@ -196,7 +196,7 @@ def get_chat_response(prompt, model_choice="OpenAI", temperature=0.3):
                 model="gpt-4o",
                 temperature= temperature,
                 api_key=API_KEY,
-                streaming=True,
+                streaming=False,
                 callbacks=[stream_handler]
             )
         elif model_choice == "Groq API":
