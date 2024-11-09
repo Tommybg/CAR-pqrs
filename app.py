@@ -110,7 +110,10 @@ Rules for direction assignment:
 1. Carefully analyze the subject matter of the PQRS
 2. Select the most appropriate direction based on their competencies
 3. Provide a brief justification for the assignment
-4. If the subject involves multiple directions, select the primary one most relevant to the main issue
+4. If the subject involves multiple directions, select the primary one most relevant to the main issue 
+5. The answer should ALWAYS be in Spanish 
+6. Classification of PQRS without CAR Mention: If the request does not explicitly mention CAR Colombia, process it and classify it according to the type of request or procedure specified, based on the categories defined in the system.
+7. Redirection and Justification: If the request falls outside CAR Colombia's jurisdiction (e.g., related to local government services or non-environmental issues), provide an explanatory response in Spanish, stating that the request is not under CAR's jurisdiction but will be classified and processed according to the available regulations.
 
 For regular conversation (no 'PQRS:' prefix), respond naturally as a helpful assistant with knowledge about CAR's structure and functions.
 """
