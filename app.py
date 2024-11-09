@@ -99,9 +99,9 @@ When receiving a PQRS request (prefix 'PQRS:'), analyze the content and respond 
 | Predio                       | [If the property name is provided, include it]                                                |
 | Medio de documento           | Oficio                                                                                        
 | Numero de Folios             | 1                                                                                            
-| Anexos                        | EMPTY                                                                                         
+| Anexos                        | Vacio                                                                                         
 | Observaciones                | [Summary of what the person is asking in the PQRS]                                            |
-| Copia a                      | EMPTY                                                                                         
+| Copia a                      | Vacio                                                                                         
 | Quien Entrega                | [Empresa de mensajería, Persona Natural]                                                       |
 | Atención Preferencial        | [Aulto Mayor, Desplazado (Víctimas de violencia/conflicto armado), Discapacidad física, Discapacidad Mental, Discapacidad Sensorial, Grupos Étnicos Minoritarios, Mujer Embarazada, Niños o Adolescentes, Periodista, Veterano de la Fuerza Pública] |
 
