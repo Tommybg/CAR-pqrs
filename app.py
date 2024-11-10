@@ -95,13 +95,13 @@ When receiving a PQRS request (prefix 'PQRS:'), analyze the content and respond 
 | Proceso especial             | [No aplica, Thoman Van der Hammen, Rios Bogota, Cerros Orientales, Auditorias, Entes de Control, DRMI Fuquene, Reporte de Licencia de parcelacion y construccion, Proceso Eleccion Rep. Sector Privado] |
 | Tipo de Tramite              | [Acciones Constitucionales, Certificación Ambiental para propuesta de Concesión Minera, Curadurías, DP Congreso de la República Ley 5/92 10 días, DP Congreso de la República Ley 5/92 48h, DP Congreso de la República Ley 5/92 5 días, Dp de Consulta, Dp de interés Particular, Dp, de oficio Permisivos, Dp Defensoria del Pueblo Ley 5/92 5 días, Dp En cumplimiento de un deber legal (Permisos), DP PERMISIVOS, Dp Queja Ambiental (Afectación ambiental), Dp Queja por atención al servicio), DP Queja por Olores Ofensivos, DP Reclamo (Contra Funciones/Funcionarios CAR), DP Recursos - Acuerdos 10 y 09, DP Recursos(15 Días), DP Recursos (60 Días), DP Recursos Exenciones Cobro Coactivo, DP Solicitud de Copias, DP Solicitud de Exepciones de Cobro Coactivo - Estatuto Tributario, DP Solicitud de Exepciones y Reclamaciones Facturación, DP Solicitud de Información, Documentos para información Institucional - Remisión Información, Ingreso por Redes Sociales, Ingreso PQR, Memorando Interno, Observaciones y/o recomendaciones POMCAS Decreto 2076-2015, Radicación Pago Copias, Radicación Trámites de Oficio o inicidados por CAR, Trámite Res 511 de 2012 Reserva Forestal Cuenca Alta Río Bogotá, Trámites Autodeclaración de Vertimientos Res. 1792 de 2013] |
 | Departamento                  | [Department Name]                                                                              |
-| Vereda                       | [If applicable, name of the village]                                                          |
-| Predio                       | [If the property name is provided, include it]                                                |
+| Vereda                       | [If applicable, name of the vereda]                                                          |
+| Predio                       | [If the property(predio) name is provided, include it]                                                |
 | Medio de documento           | Oficio                                                                                        
 | Numero de Folios             | 1                                                                                            
-| Anexos                        | Vacio                                                                                         
+| Anexos                        | VACIO                                                                                         
 | Observaciones                | [Summary of what the person is asking in the PQRS]                                            |
-| Copia a                      | Vacio                                                                                         
+| Copia a                      | VACIO                                                                                         
 | Quien Entrega                | [Empresa de mensajería, Persona Natural]                                                       |
 | Atención Preferencial        | [Aulto Mayor, Desplazado (Víctimas de violencia/conflicto armado), Discapacidad física, Discapacidad Mental, Discapacidad Sensorial, Grupos Étnicos Minoritarios, Mujer Embarazada, Niños o Adolescentes, Periodista, Veterano de la Fuerza Pública] |
 
@@ -112,8 +112,7 @@ Rules for direction assignment:
 3. Provide a brief justification for the assignment
 4. If the subject involves multiple directions, select the primary one most relevant to the main issue 
 5. The answer should ALWAYS be in Spanish 
-6. Classification of PQRS without CAR Mention: If the request does not explicitly mention CAR Colombia, process it and classify it according to the type of request or procedure specified, based on the categories defined in the system.
-7. Redirection and Justification: If the request falls outside CAR Colombia's jurisdiction (e.g., related to local government services or non-environmental issues), provide an explanatory response in Spanish, stating that the request is not under CAR's jurisdiction but will be classified and processed according to the available regulations.
+5. Si la petición no dice CAR como tal igual procesala y haz la clasificación. 
 
 For regular conversation (no 'PQRS:' prefix), respond naturally as a helpful assistant with knowledge about CAR's structure and functions.
 """
@@ -203,27 +202,21 @@ def display_response(response_text, container):
     else:
         container.markdown(response_text)
 
-def get_chat_response(prompt, model_choice="OpenAI", temperature=0.3):
+def get_chat_response(prompt, temperature=0.3):
     """Generate chat response using the selected LLM."""
     try:
         response_placeholder = st.empty()
         stream_handler = StreamHandler(response_placeholder)
         
         # Initialize chat model with API key from environment
-        if model_choice == "OpenAI":
-            chat_model = ChatOpenAI(
-                model="gpt-4o",
-                temperature= temperature,
-                api_key=API_KEY,
-                streaming=True,
-                callbacks=[stream_handler]
-            )
-        elif model_choice == "Groq API":
-            chat_model = None  # Placeholder for Groq API model
-            st.warning("Groq API model is not yet implemented.")
-        elif model_choice == "Claude":
-            chat_model = None  # Placeholder for Claude model
-            st.warning("Claude model is not yet implemented.")
+       
+        chat_model = ChatOpenAI(
+            model="gpt-4o",
+            temperature= temperature,
+            api_key=API_KEY,
+            streaming=True,
+            callbacks=[stream_handler]
+        )
         
         messages = [
             SystemMessage(content=SYSTEM_PROMPT),
@@ -269,8 +262,6 @@ Esta herramienta está diseñada para ayudarte a clasificar y gestionar eficient
 **Para comenzar ingrea tu PQRS.**  
                 """)
         
-        model_choice = st.selectbox("Selecciona el modelo de IA deseado:", ["OpenAI", "Groq API", "Claude"])
-
         if st.button("Borra Historial del Chat"):
             st.session_state.messages = []
             st.experimental_rerun()            
