@@ -243,7 +243,7 @@ def main():
     st.set_page_config(page_title="CARresponde", layout="centered")
     #st.write(logo, unsafe_allow_html=True)
     st.title("CAResponde", anchor=False)
-    st.markdown("**Soy Cundi, tú asistente virtual para la CAR. Entiende tus Peticiones, Quejas, Reclamos y Solicitudes (PQRS)**")
+    st.markdown("**Soy CAResponde, tú asistente virtual para la CAR. Entiende tus Peticiones, Quejas, Reclamos y Solicitudes (PQRS)**")
     
     # Initialize session state
     if "messages" not in st.session_state:
