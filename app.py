@@ -242,7 +242,7 @@ def get_chat_response(prompt, temperature=0.3):
 def main():
     st.set_page_config(page_title="CARresponde", layout="centered")
     #st.write(logo, unsafe_allow_html=True)
-    st.title("Cundi", anchor=False)
+    st.title("CAResponde", anchor=False)
     st.markdown("**Soy Cundi, tú asistente virtual para la CAR. Entiende tus Peticiones, Quejas, Reclamos y Solicitudes (PQRS)**")
     
     # Initialize session state
