@@ -30,22 +30,3 @@ logo = '''
     <img src="https://i.ibb.co/JH8wRgJ/logo.png" alt="Logo" style="max-width: 30%; height: 30%;">
 </div>
 '''
-
-
-bot_template = '''
-<div class="chat-message bot">
-    <div class="avatar">
-        <img src="https://i.ibb.co/GQYcqB2/3d-illustration-cartoon-business-woman-character-avatar-profile-1183071-533.jpg">
-    </div>
-    <div class="message">{{MSG}}</div>
-</div>
-'''
-
-user_template = '''
-<div class="chat-message user">
-    <div class="avatar">
-        <img src="https://i.ibb.co/0BPSWZy/japanese-suit-upscaleds.jpg">
-    </div>    
-    <div class="message">{{MSG}}</div>
-</div>
-'''
