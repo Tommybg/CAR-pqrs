@@ -27,6 +27,6 @@ css = '''
 
 logo = '''
 <div style= margin-bottom: 15px;">
-    <img src="https://i.ibb.co/cgQbQTQ/logo.png" alt="Logo" style="max-width: 20%; height: 20%;">
+    <img src="https://imgur.com/a/5KCFsvQ" alt="Logo" style="max-width: 20%; height: 20%;">
 </div>
 '''
