@@ -27,6 +27,6 @@ css = '''
 
 logo = '''
 <div style= margin-bottom: 15px;">
-    <img src="https://imgur.com/a/5KCFsvQ" alt="Logo" style="max-width: 20%; height: 20%;">
+    <img src="https://public.tableau.com/avatar/fd94acf3-58a6-4811-b3fa-94c2662ce866.jpeg" alt="Logo" style="max-width: 20%; height: 20%;">
 </div>
 '''
